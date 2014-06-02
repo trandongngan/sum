@@ -1,0 +1,62 @@
+int sum(int x, long total, int a[]){
+  if(x < 0){
+    return total;
+  }else{
+    total += a[x-1];
+    sum(x-1, total, a);
+  }
+}
+
+void output(int n, ifstream file_stream){
+  if(n = 0){
+    exit();
+  }else{
+    int x = 0;
+    char x_buffer[3];
+    char *str[1000];
+    
+    //get x number
+    myfile.getline(x_buffer, 3, '\n');
+    x = atoi(x_buffer);
+
+    //get string array number
+    myfile.getline(str, 1000, '\n');
+
+    long total = 0;
+    int arr[100];
+    fileout << sum(x, total, string_parse_to_array(x, arr, str));
+  }
+} 
+
+void string_parse_to_array(int x, int &arr, char *str){
+  if(x = 0){
+    exit();
+  }else{
+     char *p = strtok(str, " ");
+     arr[x -1] = atoi(p);
+     string_parse_to_array(x - 1, arr, str)
+  }
+}
+
+void main(){
+  int toal = 0;
+  int &n;
+
+  //read file
+  ifstream myfile;
+  myfile.open("input.txt", "+w");
+  char n_buffer[3];
+  
+  //get first number in file
+  myfile.getline(n_buffer, 3, '\n');
+  n = atoi(buffer)
+  
+  //output result file
+  ofstream fileout("output.txt",ios::out);
+  output(n, fileout);
+  fileout.close();
+  getch(); 
+}
+
+
+
